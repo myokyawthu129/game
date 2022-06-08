@@ -1,6 +1,13 @@
+let list: number[] = []
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
+    game.over(false, effects.melt)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, location) {
+    game.over(true)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (true) {
-        hops_and_paws.vy = -100
+    if (hops_and_paws.vy == 0) {
+        hops_and_paws.vy = -150
     }
 })
 let hops_and_paws: Sprite = null
@@ -148,3 +155,6 @@ controller.moveSprite(hops_and_paws, 100, 0)
 tiles.setCurrentTilemap(tilemap`level1`)
 hops_and_paws.ay = 350
 scene.cameraFollowSprite(hops_and_paws)
+for (let value of list) {
+	
+}
